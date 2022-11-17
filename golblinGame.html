@@ -7,9 +7,48 @@
     <title>Goblin Game</title>
     <Script>
         function gameStart(){
+            playerTurn = false;
+            pile1 = 3;
+            pile2 = 3;
+            pile3 = 3;
+            myDiv = document.getElementById("speachBox");
+            /*while(pile1+pile2+pile3 > 0){*/
+
+            if(playerTurn){
+                myDiv.innerHTML ="Pick a pile to take a rock from!"
+                playersTurn();
+                myDiv.innerHTML ="unK - Damn bro, that move was kinda garbage no cap";
+                playerTurn = false;
+            }
+            else{
+                goblinTurn();
+                playerTurn = true;
+            }
+        /*}*/
+            gameEnd();
+        }
+        function playersTurn(){
 
         }
-        function takeStones(){
+        function goblinTurn(){
+            if (pile1 == pile2 && pile2 == pile3){
+                pile1--;
+                myDiv.innerHTML = "The goblins took a rock from pile 1!";
+            }
+            else if (pile1 > pile2 && pile1 > pile3){
+                pile1--;
+                myDiv.innerHTML = "The goblins took a rock from pile 1!";
+            }
+            else if (pile2 > pile1 && pile2 > pile3){
+                pile2--;
+                myDiv.innerHTML = "The goblins took a rock from pile 2!";
+            }
+            else if (pile3 > pile1 && pile3 > pile2){
+                pile3--;
+                myDiv.innerHTML = "The goblins took a rock from pile 3!";
+            }
+        }
+        function gameEnd(){
 
         }
     </Script>
@@ -17,7 +56,14 @@
 <body>
     <h1>GOBLIN GAME</h1>
     <a href="howToPlay.html" >How To Play The Game!</a>
-    <button>PLAY(reset)</button>
+    <button onclick="gameStart();">PLAY(reset)</button>
+    <P> </P>
+    <div>
+        <button onclick="playersTurn();">Pile 1</button> <button onclick="playersTurn();">Pile 2</button> <button onclick="playersTurn();">Pile 3</button>
+    </div>
+    <div id="speachBox">
+
+    </div>
 
 </body>
 </html>
