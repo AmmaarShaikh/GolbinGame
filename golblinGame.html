@@ -12,23 +12,29 @@
             pile2 = 3;
             pile3 = 3;
             myDiv = document.getElementById("speachBox");
+            myPiles = document.getElementById("piles");
+            myPiles.innerHTML = "Pile 1: " + pile1 + "|| Pile 2: " + pile2 + "|| Pile 3: " + pile3;
             /*while(pile1+pile2+pile3 > 0){*/
 
             if(playerTurn){
+                myPiles.innerHTML = "Pile 1: " + pile1 + "|| Pile 2: " + pile2 + "|| Pile 3: " + pile3;
                 myDiv.innerHTML ="Pick a pile to take a rock from!"
                 playersTurn();
                 myDiv.innerHTML ="unK - Damn bro, that move was kinda garbage no cap";
+                myPiles.innerHTML = "Pile 1: " + pile1 + "|| Pile 2: " + pile2 + "|| Pile 3: " + pile3;
                 playerTurn = false;
             }
             else{
+                myPiles.innerHTML = "Pile 1: " + pile1 + "|| Pile 2: " + pile2 + "|| Pile 3: " + pile3;
                 goblinTurn();
+                myPiles.innerHTML = "Pile 1: " + pile1 + "|| Pile 2: " + pile2 + "|| Pile 3: " + pile3;
                 playerTurn = true;
             }
         /*}*/
             gameEnd();
         }
         function playersTurn(){
-
+            myDiv.innerHTML = "Click the Corresponding Button!"
         }
         function goblinTurn(){
             if (pile1 == pile2 && pile2 == pile3){
@@ -49,7 +55,13 @@
             }
         }
         function gameEnd(){
-
+            myDiv.innerHTML = "Game Ends"
+            if(playersTurn){
+                myDiv.innerHTML = "The Goblins Lose! unK - :("
+            }
+            else{
+                myDiv.innerHTML = "The Goblins Won! unK - L Bozo + Ratio"
+            }
         }
     </Script>
 </head>
@@ -59,8 +71,21 @@
     <button onclick="gameStart();">PLAY(reset)</button>
     <P> </P>
     <div>
-        <button onclick="playersTurn();">Pile 1</button> <button onclick="playersTurn();">Pile 2</button> <button onclick="playersTurn();">Pile 3</button>
+        <button onclick="playersTurn();">Pile 1-1</button> <button onclick="playersTurn();">Pile 2-1</button> <button onclick="playersTurn();">Pile 3-1</button>
     </div>
+    <br>
+    <div>
+        <button onclick="playersTurn();">Pile 1-2</button> <button onclick="playersTurn();">Pile 2-2</button> <button onclick="playersTurn();">Pile 3-2</button>
+    </div>
+    <br>
+    <div>
+        <button onclick="playersTurn();">Pile 1-3</button> <button onclick="playersTurn();">Pile 2-3</button> <button onclick="playersTurn();">Pile 3-3</button>
+    </div>
+    <br>
+    <div id="piles">
+        
+    </div>
+    <br>
     <div id="speachBox">
 
     </div>
