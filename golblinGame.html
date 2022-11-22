@@ -30,9 +30,9 @@
                 myPiles.innerHTML = "Pile 1: " + pile1 + "|| Pile 2: " + pile2 + "|| Pile 3: " + pile3;
                 playerTurn = true;
             }
-        /*}*/
-            gameEnd();
         }
+            gameEnd();
+        /*}*/
         function playersTurn(){
             myDiv.innerHTML = "Click the Corresponding Button!"
         }
@@ -54,6 +54,87 @@
                 myDiv.innerHTML = "The goblins took a rock from pile 3!";
             }
         }
+        function one1(){
+            if (pile1 < 1){
+                myDiv.innerHTML = "unK - This pile has no more rocks bumbo";
+            }
+            else{
+                pile1--;
+                myDiv.innerHTML = "You removed one rock from pile 1!";
+            }
+        }
+        function one2(){
+            if (pile1 < 2){
+                myDiv.innerHTML = "unK - You trying to take out more than there are bumbooo";
+            }
+            else{
+                pile1 -=2;
+                myDiv.innerHTML = "You removed two rock from pile 1!";
+            }
+        }
+        function one3(){
+            if (pile1 < 3){
+                myDiv.innerHTML = "unK - Trying to take out too many bamboo!";
+            }
+            else{
+                pile1 -= 3;
+                myDiv.innerHTML = "You removed three rock from pile 1!";
+            }
+        }
+        function two1(){
+            if (pile2 < 1){
+                myDiv.innerHTML = "unK - This pile has no more rocks bumbo";
+            }
+            else{
+                pile2--;
+                myDiv.innerHTML = "You removed one rock from pile 2!";
+            }
+        }
+        function two2(){
+            if (pile2 < 2){
+                myDiv.innerHTML = "unK - You trying to take out more than there are bumbooo";
+            }
+            else{
+                pile2 -= 2;
+                myDiv.innerHTML = "You removed two rock from pile 2!";
+            }
+        }
+        function two3(){
+            if (pile2 < 3){
+                myDiv.innerHTML = "unK - Trying to take out too many bamboo!";
+            }
+            else{
+                pile2 -= 3;
+                myDiv.innerHTML = "You removed three rock from pile 1!";
+            }
+        }
+        function three1(){
+            if (pile3 < 1){
+                myDiv.innerHTML = "unK - This pile has no more rocks bumbo";
+            }
+            else{
+                pile3--;
+                myDiv.innerHTML = "You removed one rock from pile 3!";
+            }
+        }
+        function three2(){
+            if (pile3 < 2){
+                myDiv.innerHTML = "unK - You trying to take out more than there are bumbooo";
+            }
+            else{
+                pile3 -= 2;
+                myDiv.innerHTML = "You removed two rock from pile 3!";
+            }
+        }
+        function three3(){
+            if (pile3 < 3){
+                myDiv.innerHTML = "unK - This pile has no more rocks bumbo";
+            }
+            else{
+                pile3 -= 3;
+                myDiv.innerHTML = "You removed one rock from pile 3!";
+            }
+        }
         function gameEnd(){
             myDiv.innerHTML = "Game Ends"
             if(playersTurn){
@@ -67,11 +148,12 @@
 </head>
 <body>
     <h1>GOBLIN GAME</h1>
-    <a href="howToPlay.html" >How To Play The Game!</a>
+    <h2>HOW TO PLAY THE GAME!!!!?!??!?!?!?</h2>
+    <p>The Goblins go first, taking a rock from the biggest pile always. You can choose to take any set number of rocks from any pile and the one that takes the last rock loses.</p>
     <button onclick="gameStart();">PLAY(reset)</button>
     <P> </P>
     <div>
-        <button onclick="playersTurn();">Pile 1-1</button> <button onclick="playersTurn();">Pile 2-1</button> <button onclick="playersTurn();">Pile 3-1</button>
+        <button onclick="one1(), playersTurn();">Pile 1-1</button> <button onclick="two1(), playersTurn()">Pile 2-1</button> <button onclick="three1(), playersTurn()">Pile 3-1</button>
     </div>
     <br>
     <div>
